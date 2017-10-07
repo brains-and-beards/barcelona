@@ -867,6 +867,16 @@ braces@^1.8.2:
     preserve "^0.2.0"
     repeat-element "^1.1.2"
 
+bs-platform@^1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.9.3.tgz#8c28976ea206165183f0e8bb2c3cfd8a04120a8a"
+
+bs-react-native@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/bs-react-native/-/bs-react-native-0.2.1.tgz#73b98474747d803951b18cb21df817855b01fc70"
+  dependencies:
+    reason-react "^0.2.4"
+
 bser@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/bser/-/bser-2.0.0.tgz#9ac78d3ed5d915804fd87acb158bc797147a1719"
@@ -2604,7 +2614,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.6, prop-types@^15.5.8:
+prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -2682,6 +2692,15 @@ react-devtools-core@^2.5.0:
   dependencies:
     shell-quote "^1.6.1"
     ws "^2.0.3"
+
+react-dom@>=15.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 react-native@0.49.2:
   version "0.49.2"
@@ -2766,6 +2785,15 @@ react@16.0.0-beta.5:
     object-assign "^4.1.0"
     prop-types "^15.5.6"
 
+react@>=15.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
 read-pkg-up@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
@@ -2801,6 +2829,13 @@ readable-stream@~1.1.8, readable-stream@~1.1.9:
     inherits "~2.0.1"
     isarray "0.0.1"
     string_decoder "~0.10.x"
+
+reason-react@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.2.4.tgz#96d85a533fc93e695818dbb3e6a8ae05fbf0de7d"
+  dependencies:
+    react ">=15.0.0"
+    react-dom ">=15.0.0"
 
 regenerate@^1.2.1:
   version "1.3.3"

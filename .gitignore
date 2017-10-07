@@ -53,4 +53,8 @@ buck-out/
 */fastlane/screenshots
 
 # Editor
-# jsconfig.json
+jsconfig.json
+
+# Reason
+.merlin
+lib/
