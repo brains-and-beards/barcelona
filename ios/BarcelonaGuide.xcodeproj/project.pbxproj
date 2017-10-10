@@ -25,7 +25,7 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4C21E0B4AEC006451C7 /* libRCTAnimation-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */; };
+		2D02E4C21E0B4AEC006451C7 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157351DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		2D02E4C31E0B4AEC006451C7 /* libRCTImage-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */; };
 		2D02E4C41E0B4AEC006451C7 /* libRCTLinking-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */; };
 		2D02E4C51E0B4AEC006451C7 /* libRCTNetwork-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E8C1DF850E9000B6D8A /* libRCTNetwork-tvOS.a */; };
@@ -34,6 +34,24 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* BarcelonaGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BarcelonaGuideTests.m */; };
+		3806E0831F8D51A3001FAF00 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879EC1F8D4F2E00112DA7 /* Poppins-Black.ttf */; };
+		3806E0AD1F8D51A8001FAF00 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879ED1F8D4F2E00112DA7 /* Poppins-BlackItalic.ttf */; };
+		3806E0AE1F8D51A8001FAF00 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F81F8D4F2F00112DA7 /* Poppins-Bold.ttf */; };
+		3806E0AF1F8D51A8001FAF00 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F31F8D4F2F00112DA7 /* Poppins-BoldItalic.ttf */; };
+		3806E0B01F8D51A8001FAF00 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879EF1F8D4F2E00112DA7 /* Poppins-ExtraBold.ttf */; };
+		3806E0B11F8D51A8001FAF00 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F11F8D4F2E00112DA7 /* Poppins-ExtraBoldItalic.ttf */; };
+		3806E0B21F8D51A8001FAF00 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F61F8D4F2F00112DA7 /* Poppins-ExtraLight.ttf */; };
+		3806E0B31F8D51A8001FAF00 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879FC1F8D4F3000112DA7 /* Poppins-ExtraLightItalic.ttf */; };
+		3806E0B41F8D51A8001FAF00 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F91F8D4F3000112DA7 /* Poppins-Italic.ttf */; };
+		3806E0B51F8D51A8001FAF00 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879FA1F8D4F3000112DA7 /* Poppins-Light.ttf */; };
+		3806E0B61F8D51A8001FAF00 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F71F8D4F2F00112DA7 /* Poppins-LightItalic.ttf */; };
+		3806E0B71F8D51A8001FAF00 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F21F8D4F2F00112DA7 /* Poppins-Medium.ttf */; };
+		3806E0B81F8D51A8001FAF00 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879EB1F8D4F2D00112DA7 /* Poppins-MediumItalic.ttf */; };
+		3806E0B91F8D51A8001FAF00 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F51F8D4F2F00112DA7 /* Poppins-Regular.ttf */; };
+		3806E0BA1F8D51A8001FAF00 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879EE1F8D4F2E00112DA7 /* Poppins-SemiBold.ttf */; };
+		3806E0BB1F8D51A8001FAF00 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F01F8D4F2E00112DA7 /* Poppins-SemiBoldItalic.ttf */; };
+		3806E0BC1F8D51A8001FAF00 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879FB1F8D4F3000112DA7 /* Poppins-Thin.ttf */; };
+		3806E0BD1F8D51A8001FAF00 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38E879F41F8D4F2F00112DA7 /* Poppins-ThinItalic.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -109,6 +127,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "BarcelonaGuide-tvOS";
+		};
+		3806E0A51F8D51A3001FAF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D7ECE1E25DB7D00323FB7;
+			remoteInfo = "third-party";
+		};
+		3806E0A71F8D51A3001FAF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D383D3C1EBD27B6005632C8;
+			remoteInfo = "third-party-tvOS";
+		};
+		3806E0A91F8D51A3001FAF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D7E881E25C6D100323FB7;
+			remoteInfo = "double-conversion";
+		};
+		3806E0AB1F8D51A3001FAF00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
+			remoteInfo = "double-conversion-tvOS";
+		};
+		38E879D51F8D4EF200112DA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ADD01A681E09402E00F6D226;
+			remoteInfo = "RCTBlob-tvOS";
+		};
+		38E879E71F8D4EF200112DA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3DBE0D001F3B181A0099AA32;
+			remoteInfo = fishhook;
+		};
+		38E879E91F8D4EF200112DA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3DBE0D0D1F3B181C0099AA32;
+			remoteInfo = "fishhook-tvOS";
 		};
 		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -260,6 +327,24 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* BarcelonaGuide-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BarcelonaGuide-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* BarcelonaGuide-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BarcelonaGuide-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E879EB1F8D4F2D00112DA7 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		38E879EC1F8D4F2E00112DA7 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		38E879ED1F8D4F2E00112DA7 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		38E879EE1F8D4F2E00112DA7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		38E879EF1F8D4F2E00112DA7 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		38E879F01F8D4F2E00112DA7 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		38E879F11F8D4F2E00112DA7 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		38E879F21F8D4F2F00112DA7 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		38E879F31F8D4F2F00112DA7 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		38E879F41F8D4F2F00112DA7 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		38E879F51F8D4F2F00112DA7 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		38E879F61F8D4F2F00112DA7 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		38E879F71F8D4F2F00112DA7 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		38E879F81F8D4F2F00112DA7 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		38E879F91F8D4F3000112DA7 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		38E879FA1F8D4F3000112DA7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		38E879FB1F8D4F3000112DA7 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		38E879FC1F8D4F3000112DA7 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -300,7 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */,
-				2D02E4C21E0B4AEC006451C7 /* libRCTAnimation-tvOS.a in Frameworks */,
+				2D02E4C21E0B4AEC006451C7 /* libRCTAnimation.a in Frameworks */,
 				2D02E4C31E0B4AEC006451C7 /* libRCTImage-tvOS.a in Frameworks */,
 				2D02E4C41E0B4AEC006451C7 /* libRCTLinking-tvOS.a in Frameworks */,
 				2D02E4C51E0B4AEC006451C7 /* libRCTNetwork-tvOS.a in Frameworks */,
@@ -393,6 +478,8 @@
 			children = (
 				139FDEF41B06529B00C62182 /* libRCTWebSocket.a */,
 				3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */,
+				38E879E81F8D4EF200112DA7 /* libfishhook.a */,
+				38E879EA1F8D4EF200112DA7 /* libfishhook-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,6 +487,7 @@
 		13B07FAE1A68108700A75B9A /* BarcelonaGuide */ = {
 			isa = PBXGroup;
 			children = (
+				38E879CF1F8D4EF200112DA7 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -422,16 +510,44 @@
 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
 				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
 				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
-				3DAD3EA31DF850E9000B6D8A /* libReact-tvOS.a */,
+				3806E0A61F8D51A3001FAF00 /* libthird-party.a */,
+				3806E0A81F8D51A3001FAF00 /* libthird-party.a */,
+				3806E0AA1F8D51A3001FAF00 /* libdouble-conversion.a */,
+				3806E0AC1F8D51A3001FAF00 /* libdouble-conversion.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		38E879CF1F8D4EF200112DA7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				38E879EC1F8D4F2E00112DA7 /* Poppins-Black.ttf */,
+				38E879ED1F8D4F2E00112DA7 /* Poppins-BlackItalic.ttf */,
+				38E879F81F8D4F2F00112DA7 /* Poppins-Bold.ttf */,
+				38E879F31F8D4F2F00112DA7 /* Poppins-BoldItalic.ttf */,
+				38E879EF1F8D4F2E00112DA7 /* Poppins-ExtraBold.ttf */,
+				38E879F11F8D4F2E00112DA7 /* Poppins-ExtraBoldItalic.ttf */,
+				38E879F61F8D4F2F00112DA7 /* Poppins-ExtraLight.ttf */,
+				38E879FC1F8D4F3000112DA7 /* Poppins-ExtraLightItalic.ttf */,
+				38E879F91F8D4F3000112DA7 /* Poppins-Italic.ttf */,
+				38E879FA1F8D4F3000112DA7 /* Poppins-Light.ttf */,
+				38E879F71F8D4F2F00112DA7 /* Poppins-LightItalic.ttf */,
+				38E879F21F8D4F2F00112DA7 /* Poppins-Medium.ttf */,
+				38E879EB1F8D4F2D00112DA7 /* Poppins-MediumItalic.ttf */,
+				38E879F51F8D4F2F00112DA7 /* Poppins-Regular.ttf */,
+				38E879EE1F8D4F2E00112DA7 /* Poppins-SemiBold.ttf */,
+				38E879F01F8D4F2E00112DA7 /* Poppins-SemiBoldItalic.ttf */,
+				38E879FB1F8D4F3000112DA7 /* Poppins-Thin.ttf */,
+				38E879F41F8D4F2F00112DA7 /* Poppins-ThinItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */,
-				5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */,
+				5E9157351DD0AC6500FF2AA8 /* libRCTAnimation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -501,6 +617,7 @@
 			isa = PBXGroup;
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
+				38E879D61F8D4EF200112DA7 /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -732,6 +849,55 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		3806E0A61F8D51A3001FAF00 /* libthird-party.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libthird-party.a";
+			remoteRef = 3806E0A51F8D51A3001FAF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3806E0A81F8D51A3001FAF00 /* libthird-party.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libthird-party.a";
+			remoteRef = 3806E0A71F8D51A3001FAF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3806E0AA1F8D51A3001FAF00 /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = 3806E0A91F8D51A3001FAF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3806E0AC1F8D51A3001FAF00 /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = 3806E0AB1F8D51A3001FAF00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38E879D61F8D4EF200112DA7 /* libRCTBlob-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTBlob-tvOS.a";
+			remoteRef = 38E879D51F8D4EF200112DA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38E879E81F8D4EF200112DA7 /* libfishhook.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfishhook.a;
+			remoteRef = 38E879E71F8D4EF200112DA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38E879EA1F8D4EF200112DA7 /* libfishhook-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libfishhook-tvOS.a";
+			remoteRef = 38E879E91F8D4EF200112DA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -774,10 +940,10 @@
 			remoteRef = 3DAD3E981DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3DAD3EA31DF850E9000B6D8A /* libReact-tvOS.a */ = {
+		3DAD3EA31DF850E9000B6D8A /* libReact.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libReact-tvOS.a";
+			path = libReact.a;
 			remoteRef = 3DAD3EA21DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -830,10 +996,10 @@
 			remoteRef = 5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */ = {
+		5E9157351DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libRCTAnimation-tvOS.a";
+			path = libRCTAnimation.a;
 			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -872,8 +1038,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3806E0BC1F8D51A8001FAF00 /* Poppins-Thin.ttf in Resources */,
+				3806E0B11F8D51A8001FAF00 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				3806E0B71F8D51A8001FAF00 /* Poppins-Medium.ttf in Resources */,
+				3806E0B61F8D51A8001FAF00 /* Poppins-LightItalic.ttf in Resources */,
+				3806E0AD1F8D51A8001FAF00 /* Poppins-BlackItalic.ttf in Resources */,
+				3806E0B81F8D51A8001FAF00 /* Poppins-MediumItalic.ttf in Resources */,
+				3806E0BB1F8D51A8001FAF00 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				3806E0B31F8D51A8001FAF00 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				3806E0831F8D51A3001FAF00 /* Poppins-Black.ttf in Resources */,
+				3806E0B91F8D51A8001FAF00 /* Poppins-Regular.ttf in Resources */,
+				3806E0B21F8D51A8001FAF00 /* Poppins-ExtraLight.ttf in Resources */,
+				3806E0AE1F8D51A8001FAF00 /* Poppins-Bold.ttf in Resources */,
+				3806E0B01F8D51A8001FAF00 /* Poppins-ExtraBold.ttf in Resources */,
+				3806E0B51F8D51A8001FAF00 /* Poppins-Light.ttf in Resources */,
+				3806E0B41F8D51A8001FAF00 /* Poppins-Italic.ttf in Resources */,
+				3806E0AF1F8D51A8001FAF00 /* Poppins-BoldItalic.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				3806E0BD1F8D51A8001FAF00 /* Poppins-ThinItalic.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				3806E0BA1F8D51A8001FAF00 /* Poppins-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
