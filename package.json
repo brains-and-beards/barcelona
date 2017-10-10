@@ -16,8 +16,5 @@
   },
   "devDependencies": {
     "babel-preset-react-native": "4.0.0"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
