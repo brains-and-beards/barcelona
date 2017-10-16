@@ -5,12 +5,21 @@ module Style = {
   let content = style [height 215.];
   let container = style [height 555., backgroundColor Colors.white];
   let image = style [height 250., width (float_of_int Theme.width), backgroundColor "green"];
-  let title = style [fontSize 26.];
+  let title =
+    style [
+      height 85.,
+      borderTopWidth 25.,
+      borderTopColor Colors.black,
+      backgroundColor Colors.brainsYellow,
+      alignItems `flexStart,
+      justifyContent `center,
+      fontSize 28.
+    ];
 };
 
 let component = ReasonReact.statelessComponent "RecommendationItem";
 
-let make ::id ::title ::description ::rating _children => {
+let make ::title ::description ::rating _children => {
   ...component,
   render: fun _self =>
     <View style=Style.container>
@@ -20,7 +29,7 @@ let make ::id ::title ::description ::rating _children => {
           resizeMode=`contain
           style=Style.image
         />
-        <Text style=Style.title> (ReasonReact.stringToElement title) </Text>
+        <CustomText style=Style.title> title </CustomText>
       </View>
     </View>
 };
