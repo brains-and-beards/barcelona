@@ -2,7 +2,7 @@ open ReactNative;
 
 module Style = {
   open ReactNative.Style;
-  let container = style [fontSize 18.];
+  let container = style [fontSize 18., fontFamily "Poppins", textAlignVertical `center];
   let flatten = flatten;
   let null = style [];
 };

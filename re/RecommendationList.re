@@ -1,20 +1,28 @@
 open ReactNative;
 
+module Style = {
+  open ReactNative.Style;
+  let container = style [flex 1., backgroundColor Colors.alabaster];
+};
+
 let component = ReasonReact.statelessComponent "RecommendationList";
-
-let contentStyle = Style.(style [flex 1., justifyContent `center, alignItems `center]);
-
-let containerStyle = Style.(style [flex 1.]);
 
 let make _children => {
   ...component,
   render: fun _self =>
-    <View style=containerStyle>
+    <ScrollView style=Style.container>
       <NavBar />
       <RecommendationItem
-        title="Recommendations"
-        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit and the MOntserrat Mujahedins that will keep you on your toes all the time. Heartily recommend!"
-        rating=3
+        title="Montserrat"
+        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit..."
       />
-    </View>
+      <RecommendationItem
+        title="Montserrat"
+        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit and the MOntserrat Mujahedins that will keep you on your toes all the time. Heartily recommend!"
+      />
+      <RecommendationItem
+        title="Montserrat"
+        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit and the MOntserrat Mujahedins that will keep you on your toes all the time. Heartily recommend!"
+      />
+    </ScrollView>
 };

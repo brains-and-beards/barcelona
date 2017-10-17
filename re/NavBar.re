@@ -5,7 +5,7 @@ module Style = {
   let container =
     style [
       height 85.,
-      borderTopWidth 25.,
+      borderTopWidth 20.,
       borderTopColor Colors.black,
       backgroundColor Colors.brainsYellow,
       alignItems `flexStart,
@@ -25,6 +25,8 @@ let component = ReasonReact.statelessComponent "NavBar";
 
 let make _children => {
   ...component,
-  render: fun _self =>
+  render: fun _self => {
+    StatusBar.setBarStyle `lightContent ();
     <View style=Style.container> <Text style=Style.title value="Recommendations" /> </View>
+  }
 };
