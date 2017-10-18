@@ -28,18 +28,14 @@ module Style = {
 
 let component = ReasonReact.statelessComponent "RecommendationItem";
 
-let make ::title ::description _children => {
+let make place::(place: Recommendation.place) _children => {
   ...component,
   render: fun _self =>
     <View style=Style.container>
-      <Image
-        source=Image.(Required (Packager.require "../../../assets/images/montserrat.png"))
-        resizeMode=`cover
-        style=Style.image
-      />
+      <Image source=place.image resizeMode=`cover style=Style.image />
       <View style=Style.content>
-        <CustomText style=Style.title> title </CustomText>
-        <CustomText style=Style.description> description </CustomText>
+        <CustomText style=Style.title> place.title </CustomText>
+        <CustomText style=Style.description> place.description </CustomText>
       </View>
     </View>
 };

@@ -9,20 +9,17 @@ let component = ReasonReact.statelessComponent "RecommendationList";
 
 let make _children => {
   ...component,
-  render: fun _self =>
+  render: fun _self => {
+    let recommendations =
+      Array.mapi
+        (
+          fun index place =>
+            <RecommendationItem key=("recommendation-" ^ string_of_int index) place />
+        )
+        Recommendation.recommendations;
     <ScrollView style=Style.container>
       <NavBar />
-      <RecommendationItem
-        title="Montserrat"
-        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit..."
-      />
-      <RecommendationItem
-        title="Montserrat"
-        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit and the MOntserrat Mujahedins that will keep you on your toes all the time. Heartily recommend!"
-      />
-      <RecommendationItem
-        title="Montserrat"
-        description="The holy church on top of the mountain is a wonderful place of worship and climbing. There are also cool via ferratas to visit and the MOntserrat Mujahedins that will keep you on your toes all the time. Heartily recommend!"
-      />
+      (ReasonReact.arrayToElement recommendations)
     </ScrollView>
+  }
 };
