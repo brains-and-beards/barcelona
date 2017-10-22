@@ -2,23 +2,15 @@ open ReactNative;
 
 module Style = {
   open ReactNative.Style;
-  let content =
-    style [
-      flex 1.,
-      paddingTop 15.,
-      paddingHorizontal 25.,
-      backgroundColor Colors.white,
-      marginBottom 25.
-    ];
+  let content = style [flex 1., paddingTop 15., paddingHorizontal 25., marginBottom 25.];
   let container =
     style [
+      backgroundColor Colors.white,
       height 325.,
       shadowOpacity 0.3,
       shadowRadius 3.,
       shadowOffset height::3. width::0.,
-      marginBottom 10.,
-      borderTopWidth 1.,
-      borderTopColor Colors.alabaster
+      marginBottom 10.
     ];
   let image = style [height 200., width (float_of_int Theme.width)];
   let title =

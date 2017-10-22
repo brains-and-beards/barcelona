@@ -2,7 +2,16 @@ open ReactNative;
 
 module Style = {
   open ReactNative.Style;
-  let container = style [flex 1., backgroundColor Colors.alabaster];
+  let container = style [flex 1., backgroundColor Colors.white];
+  let categories =
+    style [
+      height 60.,
+      backgroundColor Colors.white,
+      paddingHorizontal 80.,
+      flexDirection `row,
+      justifyContent `spaceBetween,
+      alignItems `center
+    ];
 };
 
 let component = ReasonReact.statelessComponent "RecommendationList";
@@ -17,8 +26,14 @@ let make _children => {
             <RecommendationItem key=("recommendation-" ^ string_of_int index) place />
         )
         Recommendation.recommendations;
+    let currentFilter = Category.Category See;
     <ScrollView style=Style.container>
       <NavBar />
+      <View style=Style.categories>
+        <Category filterCategory=All currentFilter />
+        <Category filterCategory=(Category See) currentFilter />
+        <Category filterCategory=(Category Eat) currentFilter />
+      </View>
       (ReasonReact.arrayToElement recommendations)
     </ScrollView>
   }
