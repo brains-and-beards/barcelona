@@ -1,6 +1,6 @@
 open ReactNative;
 
-type categoryFilter =
+type filter =
   | Category Recommendation.category
   | All;
 
@@ -21,7 +21,7 @@ module Style = {
 
 let component = ReasonReact.statelessComponent "RecommendationItem";
 
-let make filterCategory::(filterCategory: categoryFilter) ::currentFilter _children => {
+let make filterCategory::(filterCategory: filter) ::currentFilter _children => {
   ...component,
   render: fun _self => {
     let active = filterCategory == currentFilter;

@@ -14,11 +14,21 @@ module Style = {
     ];
 };
 
-let component = ReasonReact.statelessComponent "RecommendationList";
+type state = {filter: Category.filter};
+
+type action =
+  | ChangeFilter Category.filter;
+
+let component = ReasonReact.reducerComponent "RecommendationList";
 
 let make _children => {
   ...component,
-  render: fun _self => {
+  initialState: fun () => {filter: Category.Category Eat},
+  reducer: fun action state =>
+    switch action {
+    | ChangeFilter filter => ReasonReact.Update {...state, filter}
+    },
+  render: fun self => {
     let recommendations =
       Array.mapi
         (
@@ -26,7 +36,7 @@ let make _children => {
             <RecommendationItem key=("recommendation-" ^ string_of_int index) place />
         )
         Recommendation.recommendations;
-    let currentFilter = Category.Category See;
+    let currentFilter = self.state.filter;
     <ScrollView style=Style.container>
       <NavBar />
       <View style=Style.categories>
