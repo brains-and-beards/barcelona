@@ -1,10 +1,11 @@
 {
   "name": "BarcelonaGuide",
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": ["bs-react-native", "reason-react"],
   "reason": {
     "react-jsx": 2
   },
-  "bsc-flags": ["-bs-super-errors"],
-  "bs-dependencies": ["bs-react-native", "reason-react"],
+  "refmt": 3,
   "sources": [
     {
       "dir": "re"
