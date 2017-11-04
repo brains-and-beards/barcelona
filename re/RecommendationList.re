@@ -29,20 +29,21 @@ let make _children => {
     | ChangeFilter filter => ReasonReact.Update {...state, filter}
     },
   render: fun self => {
+    let currentFilter = self.state.filter;
     let recommendations =
       Array.mapi
         (
           fun index place =>
             <RecommendationItem key=("recommendation-" ^ string_of_int index) place />
         )
-        Recommendation.recommendations;
-    let currentFilter = self.state.filter;
+        (Recommendation.filteredRecommendations currentFilter);
+    let onChange filter => self.reduce (fun _event => ChangeFilter filter) ();
     <ScrollView style=Style.container>
       <NavBar />
       <View style=Style.categories>
-        <Category filterCategory=All currentFilter />
-        <Category filterCategory=(Category See) currentFilter />
-        <Category filterCategory=(Category Eat) currentFilter />
+        <Category filter=All currentFilter onChange />
+        <Category filter=(Category See) currentFilter onChange />
+        <Category filter=(Category Eat) currentFilter onChange />
       </View>
       (ReasonReact.arrayToElement recommendations)
     </ScrollView>

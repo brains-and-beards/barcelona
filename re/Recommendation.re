@@ -1,14 +1,9 @@
-type category =
-  | Eat
-  | See
-  | Stay;
-
 type place = {
   title: string,
   rating: int,
   description: string,
   image: ReactNative.Image.imageSource,
-  category
+  category: Category.category
 };
 
 let recommendations = [|
@@ -73,3 +68,10 @@ let recommendations = [|
     category: Eat
   }
 |];
+
+let filteredRecommendations filter =>
+  Array.of_list (
+    List.filter
+      (fun place => filter == Category.All || filter == Category place.category)
+      (Array.to_list recommendations)
+  );

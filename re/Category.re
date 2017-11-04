@@ -1,7 +1,12 @@
 open ReactNative;
 
+type category =
+  | Eat
+  | See
+  | Stay;
+
 type filter =
-  | Category Recommendation.category
+  | Category category
   | All;
 
 module Style = {
@@ -21,12 +26,12 @@ module Style = {
 
 let component = ReasonReact.statelessComponent "RecommendationItem";
 
-let make filterCategory::(filterCategory: filter) ::currentFilter _children => {
+let make filter::(filter: filter) ::currentFilter ::onChange _children => {
   ...component,
   render: fun _self => {
-    let active = filterCategory == currentFilter;
+    let active = filter == currentFilter;
     let name =
-      switch filterCategory {
+      switch filter {
       | All => "all"
       | Category See => "see"
       | Category Eat => "eat"
@@ -34,6 +39,8 @@ let make filterCategory::(filterCategory: filter) ::currentFilter _children => {
       };
     let style =
       active ? ReactNative.Style.flatten [|Style.container, Style.active|] : Style.container;
-    <View style> <CustomText style=Style.content> (String.uppercase name) </CustomText> </View>
+    <TouchableOpacity style onPress=(fun _event => onChange filter)>
+      <CustomText style=Style.content> (String.uppercase name) </CustomText>
+    </TouchableOpacity>
   }
 };
