@@ -867,13 +867,13 @@ braces@^1.8.2:
     preserve "^0.2.0"
     repeat-element "^1.1.2"
 
-bs-platform@^1.9.3:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.9.3.tgz#8c28976ea206165183f0e8bb2c3cfd8a04120a8a"
+bs-platform@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.0.0.tgz#17ee607fa829f67b8b920438ebca5ec1deab3276"
 
-bs-react-native@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/bs-react-native/-/bs-react-native-0.2.1.tgz#73b98474747d803951b18cb21df817855b01fc70"
+bs-react-native@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/bs-react-native/-/bs-react-native-0.3.0.tgz#190a10d852202f02f7049aa361a948e83a332918"
   dependencies:
     reason-react "^0.2.4"
 

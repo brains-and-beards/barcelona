@@ -1,1 +1,1 @@
-let app () => <RecommendationList />;
+let app = () => <RecommendationList />;
