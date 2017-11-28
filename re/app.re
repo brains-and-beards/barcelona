@@ -3,6 +3,4 @@ let routeConfig: Navigator.routesConfig = {
   "place": {"screen": RecommendationList.jsComponent}
 };
 
-let component = Navigator.create(~routeConfig);
-
-let app = () => <RecommendationList />;
+let app = Navigator.create(~routeConfig);
