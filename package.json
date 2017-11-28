@@ -8,11 +8,11 @@
     "watch": "bsb -make-world -clean-world -w"
   },
   "dependencies": {
-    "bs-platform": "^2.0.0",
+    "bs-platform": "^2.1.0",
     "bs-react-native": "^0.3.0",
     "react": "16.0.0-beta.5",
     "react-native": "0.49.2",
-    "reason-react": "^0.2.4"
+    "react-navigation": "^1.0.0-beta.21"
   },
   "devDependencies": {
     "babel-preset-react-native": "4.0.0"

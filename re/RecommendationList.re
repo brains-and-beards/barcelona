@@ -23,7 +23,7 @@ let component = ReasonReact.reducerComponent("RecommendationList");
 
 let make = (_children) => {
   ...component,
-  initialState: () => {filter: Category.Category(Eat)},
+  initialState: () => {filter: Category.All},
   reducer: (action, state) =>
     switch action {
     | ChangeFilter(filter) => ReasonReact.Update({...state, filter})
