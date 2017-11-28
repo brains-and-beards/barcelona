@@ -48,3 +48,5 @@ let make = (_children) => {
     </ScrollView>
   }
 };
+
+let jsComponent = ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
