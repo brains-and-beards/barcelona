@@ -21,7 +21,7 @@ type action =
 
 let component = ReasonReact.reducerComponent("RecommendationList");
 
-let make = (_children) => {
+let make = (~navigation, _children) => {
   ...component,
   initialState: () => {filter: Category.All},
   reducer: (action, state) =>
@@ -33,7 +33,7 @@ let make = (_children) => {
     let recommendations =
       Array.mapi(
         (index, place) =>
-          <RecommendationItem key=("recommendation-" ++ string_of_int(index)) place />,
+          <RecommendationItem navigation key=("recommendation-" ++ string_of_int(index)) place />,
         Recommendation.filteredRecommendations(currentFilter)
       );
     let onChange = (filter) => self.reduce((_event) => ChangeFilter(filter), ());
