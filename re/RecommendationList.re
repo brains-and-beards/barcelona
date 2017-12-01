@@ -49,4 +49,8 @@ let make = (_children) => {
   }
 };
 
-let jsComponent = ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
+let jsComponent =
+  ReasonReact.wrapReasonForJs(
+    ~component,
+    (jsProps) => make(~navigation=jsProps##navigation, [||])
+  );
