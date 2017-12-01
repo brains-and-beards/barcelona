@@ -25,11 +25,11 @@ let component = ReasonReact.statelessComponent("RecommendationItem");
 let make = (~navigation: navigation, ~place: Recommendation.place, _children) => {
   ...component,
   render: (_self) =>
-    <TouchableOpacity style=Style.container onPress=(() => navigation.navigate("Details"))>
+    <View style=Style.container>
       <Image source=place.image resizeMode=`cover style=Style.image />
       <View style=Style.content>
         <CustomText style=Style.title> place.title </CustomText>
         <CustomText style=Style.description> place.description </CustomText>
       </View>
-    </TouchableOpacity>
+    </View>
 };
