@@ -18,6 +18,16 @@ let recommendations = [|
     category: See
   },
   {
+    title: "Santa Ceviche",
+    description: "Uno de los mejores restaurantes de comida peruana. Empezar con los choricitos, seguir con un buen ceviche y por ultimo una jalea...",
+    image:
+      ReactNative.Image.(
+        Required(ReactNative.Packager.require("../../../assets/images/santa-ceviche.jpg"))
+      ),
+    rating: 5,
+    category: Eat
+  },
+  {
     title: "Sagrada Familia",
     description: "Templo Expiatorio de la Sagrada Familia ia a large unfinished Roman Catholic church in Barcelona, designed by Catalan architect Antoni Gaudí...",
     image:
@@ -36,16 +46,6 @@ let recommendations = [|
       ),
     rating: 2,
     category: See
-  },
-  {
-    title: "Santa Ceviche",
-    description: "Uno de los mejores restaurantes de comida peruana. Empezar con los choricitos, seguir con un buen ceviche y por último una jalea...",
-    image:
-      ReactNative.Image.(
-        Required(ReactNative.Packager.require("../../../assets/images/santa-ceviche.jpg"))
-      ),
-    rating: 5,
-    category: Eat
   },
   {
     title: "Quimet & Quimet",

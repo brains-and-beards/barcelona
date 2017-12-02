@@ -4,9 +4,7 @@ module Style = {
   open ReactNative.Style;
   let container =
     style([
-      height(80.),
-      borderTopWidth(20.),
-      borderTopColor(Colors.black),
+      height(60.),
       backgroundColor(Colors.brainsYellow),
       alignItems(`flexStart),
       justifyContent(`center)
