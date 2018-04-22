@@ -1,4 +1,4 @@
-open ReactNative;
+open BsReactNative;
 
 type category =
   | Eat
@@ -10,17 +10,17 @@ type filter =
   | All;
 
 module Style = {
-  open ReactNative.Style;
+  open BsReactNative.Style;
   let container =
     style([
-      justifyContent(`center),
-      paddingHorizontal(10.),
-      paddingBottom(7.),
-      paddingTop(10.),
+      justifyContent(Center),
+      paddingHorizontal(Pt(10.)),
+      paddingBottom(Pt(7.)),
+      paddingTop(Pt(10.)),
       borderBottomColor(Colors.white),
       borderBottomWidth(4.)
     ]);
-  let content = style([fontSize(20.), textAlign(`center)]);
+  let content = style([fontSize(Float(20.)), textAlign(Center)]);
   let active = style([borderBottomColor(Colors.brainsYellow)]);
 };
 
@@ -38,7 +38,7 @@ let make = (~filter: filter, ~currentFilter, ~onChange, _children) => {
       | Category(Stay) => "stay"
       };
     let style =
-      active ? ReactNative.Style.flatten([|Style.container, Style.active|]) : Style.container;
+      active ? BsReactNative.Style.flatten([|Style.container, Style.active|]) : Style.container;
     <TouchableOpacity style onPress=((_event) => onChange(filter))>
       <CustomText style=Style.content> (String.uppercase(name)) </CustomText>
     </TouchableOpacity>

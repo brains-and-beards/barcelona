@@ -1,16 +1,16 @@
-open ReactNative;
+open BsReactNative;
 
 module Style = {
-  open ReactNative.Style;
+  open BsReactNative.Style;
   let container = style([flex(1.), backgroundColor(Colors.white)]);
   let categories =
     style([
-      height(60.),
+      height(Pt(60.)),
       backgroundColor(Colors.white),
-      paddingHorizontal(80.),
-      flexDirection(`row),
-      justifyContent(`spaceBetween),
-      alignItems(`center)
+      paddingHorizontal(Pt(80.)),
+      flexDirection(Row),
+      justifyContent(SpaceBetween),
+      alignItems(Center)
     ]);
 };
 

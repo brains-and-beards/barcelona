@@ -1,21 +1,21 @@
-open ReactNative;
+open BsReactNative;
 
 module Style = {
-  open ReactNative.Style;
+  open BsReactNative.Style;
   let container =
     style([
-      height(60.),
+      height(Pt(60.)),
       backgroundColor(Colors.brainsYellow),
-      alignItems(`flexStart),
-      justifyContent(`center)
+      alignItems(FlexStart),
+      justifyContent(Center)
     ]);
   let title =
     style([
-      textAlign(`left),
-      textAlignVertical(`center),
-      fontSize(20.),
+      textAlign(Left),
+      textAlignVertical(Center),
+      fontSize(Float(20.)),
       fontFamily("Poppins"),
-      paddingLeft(20.)
+      paddingLeft(Pt(20.))
     ]);
 };
 

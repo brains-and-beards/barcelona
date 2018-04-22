@@ -1,1 +1,1 @@
-let width = ReactNative.Dimensions.get(`screen)##width;
+let width = BsReactNative.Dimensions.get(`screen)##width;
