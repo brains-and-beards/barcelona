@@ -1,1 +1,1 @@
-let app = Navigator.create(~routeConfig=Navigator.routeConfig);
+let app = () => ReasonReact.element @@ RecommendationList.make();

@@ -10,15 +10,13 @@ module Style = {
       paddingHorizontal(Pt(80.)),
       flexDirection(Row),
       justifyContent(SpaceBetween),
-      alignItems(Center)
+      alignItems(Center),
     ]);
 };
 
 let component = ReasonReact.statelessComponent("RecommendationDetails");
 
-let make = (_children) => {
+let make = _children => {
   ...component,
-  render: (_self) => <ScrollView style=Style.container> <NavBar /> </ScrollView>
+  render: _self => <ScrollView style=Style.container> <NavBar /> </ScrollView>,
 };
-
-let jsComponent = ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
