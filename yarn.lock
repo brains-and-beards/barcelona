@@ -896,9 +896,9 @@ bs-platform@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-3.0.0.tgz#38f200730db52fdea37819376b6ac3dfb20244c0"
 
-bs-react-native@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/bs-react-native/-/bs-react-native-0.6.0.tgz#d0ad42d8bc57c92074df59de3fd49c4407203b11"
+bs-react-native@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/bs-react-native/-/bs-react-native-0.7.0.tgz#1105177816273e575f5b84c00827b772fd86b056"
 
 bser@1.0.2:
   version "1.0.2"
