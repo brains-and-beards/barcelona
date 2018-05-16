@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "build": "bsb -make-world -clean-world",
-    "watch": "bsb -make-world -clean-world -w"
+    "bs:clean": "bsb -clean-world",
+    "bs:build": "bsb -make-world",
+    "bs:watch": "bsb -make-world -w"
   },
   "dependencies": {
     "bs-platform": "^3.0.0",
