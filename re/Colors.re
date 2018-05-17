@@ -1,7 +1,9 @@
-let alabaster = "#FAFAFA";
+open BsReactNative.Style;
 
-let black = "#000000";
+let alabaster = String("#FAFAFA");
 
-let brainsYellow = "#FEE740";
+let black = String("#000000");
 
-let white = "#FFFFFF";
+let brainsYellow = String("#FEE740");
+
+let white = String("#FFFFFF");
