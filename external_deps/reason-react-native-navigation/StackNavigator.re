@@ -1,6 +1,6 @@
 module type Impl = {type navigationState;};
 
-open ReactNative;
+open BsReactNative;
 
 module Make = (Impl: Impl) => {
   type state = {
@@ -26,35 +26,37 @@ module Make = (Impl: Impl) => {
     let commonStyle =
       Style.[
         flex(1.),
-        backgroundColor("#E9E9EF"),
-        bottom(0.),
-        left(0.),
-        Style.position(`absolute),
-        right(0.),
-        shadowColor("black"),
+        backgroundColor(String("#E9E9EF")),
+        bottom(Pt(0.)),
+        left(Pt(0.)),
+        Style.position(Absolute),
+        right(Pt(0.)),
+        shadowColor(String("black")),
         shadowOffset(~width=0., ~height=0.),
         shadowOpacity(0.2),
         shadowRadius(5.),
-        top(0.),
+        top(Pt(0.)),
       ];
-    switch (Platform.os) {
-    | IOS =>
+    switch (Platform.os()) {
+    | IOS(_) =>
       Style.style([
-        Style.opacityInterpolated @@
-        Animated.Value.interpolate(
-          position,
-          ~inputRange=[
-            index -. 1.,
-            index -. 0.99,
-            index,
-            index +. 0.99,
-            index +. 1.,
-          ],
-          ~outputRange=`float([0., 1., 1., 0.85, 0.]),
-          (),
+        Style.opacity @@
+        Style.Interpolated(
+          Animated.Value.interpolate(
+            position,
+            ~inputRange=[
+              index -. 1.,
+              index -. 0.99,
+              index,
+              index +. 0.99,
+              index +. 1.,
+            ],
+            ~outputRange=`float([0., 1., 1., 0.85, 0.]),
+            (),
+          ),
         ),
         if (intIndex == length - 1) {
-          Style.transformInterpolated(
+          Style.Transform.makeInterpolated(
             ~translateX=
               Animated.Value.interpolate(
                 position,
@@ -65,7 +67,7 @@ module Make = (Impl: Impl) => {
             (),
           );
         } else {
-          Style.transformInterpolated(
+          Style.Transform.makeInterpolated(
             ~translateX=
               Animated.Value.interpolate(
                 position,
@@ -80,14 +82,16 @@ module Make = (Impl: Impl) => {
       ])
     | Android =>
       Style.style([
-        Style.opacityInterpolated @@
-        Animated.Value.interpolate(
-          position,
-          ~inputRange=[index -. 1., index, index +. 0.99, index +. 1.],
-          ~outputRange=`float([0., 1., 1., 0.]),
-          (),
+        Style.opacity @@
+        Interpolated(
+          Animated.Value.interpolate(
+            position,
+            ~inputRange=[index -. 1., index, index +. 0.99, index +. 1.],
+            ~outputRange=`float([0., 1., 1., 0.]),
+            (),
+          ),
         ),
-        Style.transformInterpolated(
+        Style.Transform.makeInterpolated(
           ~translateY=
             Animated.Value.interpolate(
               position,
@@ -129,7 +133,7 @@ module Make = (Impl: Impl) => {
       )
     </View>;
   let renderIOS = (~handlers, ~width, ~position, ~screens, ~titles, ~goBack) =>
-    <View style=Style.(style([flexDirection(`columnReverse), flex(1.)]))>
+    <View style=Style.(style([flexDirection(ColumnReverse), flex(1.)]))>
       (renderCardStack(~handlers, ~width, ~position, ~screens))
       (Header.IOS.render(~position, ~goBack, ~titles))
     </View>;
@@ -272,7 +276,7 @@ module Make = (Impl: Impl) => {
     willUnmount: ({state}) =>
       switch (state.onBackAndroid) {
       | Some(backAndroid) =>
-        BackHandlerRe.removeEventListener(
+        BackHandler.removeEventListener(
           "hardwareBackPressReasonNative",
           backAndroid,
         )
@@ -309,7 +313,7 @@ module Make = (Impl: Impl) => {
                   false;
                 } else {
                   let hasDraggedEnough =
-                    abs_float(currentDragDistance > responeThreshold);
+                    abs_float(currentDragDistance) > responeThreshold;
                   let isOnFirstCard = index == 0;
                   hasDraggedEnough && ! isOnFirstCard;
                 };
@@ -325,7 +329,7 @@ module Make = (Impl: Impl) => {
                   if (gesture.dx > 0.) {
                     let currentValue =
                       (startValue -. gesture.dx) /. axisDistance;
-                    let value = float(index +. currentValue);
+                    let value = float(index) +. currentValue;
                     AnimatedRe.Value.setValue(position, value);
                   };
                 }
@@ -362,14 +366,14 @@ module Make = (Impl: Impl) => {
                 } else if (movedDistance > axisDistance /. 2.) {
                   goBackCard(
                     ~pop=goBack,
-                    backFromIndex = index,
-                    duration = goBackDuration,
+                    ~backFromIndex=index,
+                    ~duration=goBackDuration,
                     ~position,
                   );
                 } else {
                   reset(
-                    resetToIndex = index,
-                    duration = resetDuration,
+                    ~resetToIndex=index,
+                    ~duration=resetDuration,
                     ~position,
                   );
                 };
@@ -381,8 +385,8 @@ module Make = (Impl: Impl) => {
       | [] => ReasonReact.nullElement
       | _ =>
         let f =
-          switch (Platform.os) {
-          | IOS => renderIOS(~goBack)
+          switch (Platform.os()) {
+          | IOS(_) => renderIOS(~goBack)
           | _ => renderAndroid
           };
         <View

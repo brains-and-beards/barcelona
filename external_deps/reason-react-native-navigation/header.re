@@ -1,8 +1,10 @@
-open ReactNative;
+open BsReactNative;
 
 let getPlatformStyle = (iosSize, androidSize) =>
-  switch (Platform.os) {
-  | IOS => iosSize
+  switch (Platform.os()) {
+  | IOS(Phone) => iosSize
+  | IOS(TV) => iosSize
+  | IOS(Pad) => iosSize
   | Android => androidSize
   };
 
@@ -10,17 +12,17 @@ let appBarHeight = getPlatformStyle(44., 56.);
 
 let statusBarHeight = getPlatformStyle(20., 0.);
 
-let titleOffset = getPlatformStyle(70., 56.);
+let titleOffset = getPlatformStyle(Style.Pt(70.), Style.Pt(56.));
 
 let iosPlatformStyle =
   Style.[
     borderBottomWidth(StyleSheet.hairlineWidth),
-    borderBottomColor("rgba(0, 0, 0, .3)"),
+    borderBottomColor(String("rgba(0, 0, 0, .3)")),
   ];
 
 let androidPlatformStyle =
   Style.[
-    shadowColor("black"),
+    shadowColor(String("black")),
     shadowOpacity(0.1),
     shadowRadius(StyleSheet.hairlineWidth),
     elevation(4.),
@@ -32,16 +34,21 @@ let platformContainerStyles =
 module ItemStyle = {
   let shared =
     Style.[
-      justifyContent(`center),
-      alignItems(`center),
-      backgroundColor("transparent"),
+      justifyContent(Center),
+      alignItems(Center),
+      backgroundColor(String("transparent")),
     ];
   let styles =
     StyleSheet.create(
       Style.(
         {
           "right":
-            style([right(0.), bottom(0.), top(0.), position(`absolute)]),
+            style([
+              right(Pt(0.)),
+              bottom(Pt(0.)),
+              top(Pt(0.)),
+              position(Absolute),
+            ]),
         }
       ),
     );
@@ -51,14 +58,17 @@ module HeaderTitle = {
   let computedStyle = (~position, ~index) => {
     let index = float(index);
     Style.style([
-      Style.opacityInterpolated @@
-      Animated.Value.interpolate(
-        position,
-        ~inputRange=[index -. 1., index, index +. 1.],
-        ~outputRange=`float([0., 1., 0.]),
-        (),
+      Style.opacity(
+        Style.Interpolated(
+          Animated.Value.interpolate(
+            position,
+            ~inputRange=[index -. 1., index, index +. 1.],
+            ~outputRange=`float([0., 1., 0.]),
+            (),
+          ),
+        ),
       ),
-      Style.transformInterpolated(
+      Style.Transform.makeInterpolated(
         ~translateX=
           Animated.Value.interpolate(
             position,
@@ -76,21 +86,22 @@ module HeaderTitle = {
         {
           "titleContainer":
             style([
-              bottom(0.),
+              bottom(Pt(0.)),
               left(titleOffset),
               right(titleOffset),
-              top(0.),
-              position(`absolute),
-              alignItems @@ getPlatformStyle(`center, `flexStart),
+              top(Pt(0.)),
+              position(Absolute),
+              alignItems @@
+              getPlatformStyle(Center: Style.alignItems, FlexStart),
               ...ItemStyle.shared,
             ]),
           "title":
             style([
-              fontSize @@ getPlatformStyle(17.0, 20.0),
+              fontSize @@ getPlatformStyle(Float(17.0), Float(20.0)),
               fontWeight @@ getPlatformStyle(`_600, `_500),
-              color("rgba(0, 0, 0, .9)"),
-              textAlign @@ getPlatformStyle(`center, `left),
-              marginHorizontal(16.),
+              color(String("rgba(0, 0, 0, .9)")),
+              textAlign @@ getPlatformStyle(Center: Style.textAlign, Left),
+              marginHorizontal(Pt(16.)),
             ]),
         }
       ),
@@ -133,49 +144,61 @@ module HeaderBackButton = {
   let computedStyle = (~position, ~index) => {
     let index = float(index);
     Style.style([
-      Style.opacityInterpolated @@
-      Animated.Value.interpolate(
-        position,
-        ~inputRange=[
-          index -. 1.,
-          index -. 0.5,
-          index,
-          index +. 0.5,
-          index +. 1.,
-        ],
-        ~outputRange=`float([0., 0., 1., 0., 0.]),
-        (),
+      Style.opacity @@
+      Style.Interpolated(
+        Animated.Value.interpolate(
+          position,
+          ~inputRange=[
+            index -. 1.,
+            index -. 0.5,
+            index,
+            index +. 0.5,
+            index +. 1.,
+          ],
+          ~outputRange=`float([0., 0., 1., 0., 0.]),
+          (),
+        ),
       ),
     ]);
   };
   let iconIOS =
     Style.[
-      height(21.),
-      width(13.),
-      marginLeft(10.),
-      marginRight(22.),
-      marginVertical(12.),
-      resizeMode(`contain),
+      height(Pt(21.)),
+      width(Pt(13.)),
+      marginLeft(Pt(10.)),
+      marginRight(Pt(22.)),
+      marginVertical(Pt(12.)),
+      resizeMode(Contain),
     ];
   let iconAndroid =
-    Style.[height(24.), width(24.), margin(16.), resizeMode(`contain)];
+    Style.[
+      height(Pt(24.)),
+      width(Pt(24.)),
+      margin(Pt(16.)),
+      resizeMode(Contain),
+    ];
   let styles =
     StyleSheet.create(
       Style.(
         {
           "container":
             style([
-              alignItems(`center),
-              flexDirection(`row),
-              backgroundColor("transparent"),
+              alignItems(Center),
+              flexDirection(Row),
+              backgroundColor(String("transparent")),
             ]),
           "iconWithTitle":
-            getPlatformStyle(style([marginRight(5.)]), style([])),
+            getPlatformStyle(style([marginRight(Pt(5.))]), style([])),
           "icon": Style.style @@ getPlatformStyle(iconIOS, iconAndroid),
           "containerLeft":
             style @@
             ItemStyle.shared
-            @ [left(0.), bottom(0.), top(0.), position(`absolute)],
+            @ [
+              left(Pt(0.)),
+              bottom(Pt(0.)),
+              top(Pt(0.)),
+              position(Absolute),
+            ],
         }
       ),
     );
@@ -200,13 +223,14 @@ let styles =
   StyleSheet.create(
     Style.(
       {
-        "header2": style([flexDirection(`row)]),
+        "header2": style([flexDirection(Row)]),
         "header1": style([flex(1.)]),
         "header0":
           style([
-            paddingTop(statusBarHeight),
-            backgroundColor @@ getPlatformStyle("#F7F7F7", "#FFF"),
-            height @@ statusBarHeight +. appBarHeight,
+            paddingTop(Pt(statusBarHeight)),
+            backgroundColor @@
+            getPlatformStyle(String("#F7F7F7"), String("#FFF")),
+            height @@ Pt(statusBarHeight +. appBarHeight),
             ...platformContainerStyles,
           ]),
       }
@@ -219,7 +243,7 @@ let renderHeader = (~goBack, ~position, index, title) =>
     style=(Style.concat([StyleSheet.absoluteFill, styles##header2]))>
     (HeaderTitle.IOS.render(~title, ~position, ~index))
     (
-      if (index > 0 && Platform.os != Android) {
+      if (index > 0 && Platform.os() != Android) {
         HeaderBackButton.render(~position, ~onPress=goBack, ~index);
       } else {
         ReasonReact.nullElement;
