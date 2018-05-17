@@ -5,7 +5,8 @@
   "scripts": {
     "bs:clean": "bsb -clean-world",
     "bs:build": "bsb -make-world",
-    "bs:watch": "bsb -make-world -w"
+    "bs:watch": "bsb -make-world -w",
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
     "bs-platform": "^3.0.0",
