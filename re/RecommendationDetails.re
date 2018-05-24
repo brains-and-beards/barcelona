@@ -18,5 +18,9 @@ let component = ReasonReact.statelessComponent("RecommendationDetails");
 
 let make = _children => {
   ...component,
-  render: _self => <ScrollView style=Style.container> <NavBar /> </ScrollView>,
+  render: _self =>
+    <ScrollView style=Style.container>
+      <NavBar />
+      <Text value="test of a detailed view" />
+    </ScrollView>,
 };
