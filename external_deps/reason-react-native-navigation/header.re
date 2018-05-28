@@ -210,7 +210,9 @@ module HeaderBackButton = {
         <View style=styles##container>
           <Image
             style=styles##icon
-            source=(Required(Packager.require("../../../assets/back.png")))
+            source=(
+              Required(Packager.require("../../../../assets/back.png"))
+            )
           />
           (backButtonText(~text=""))
         </View>
