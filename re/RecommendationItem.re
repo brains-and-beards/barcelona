@@ -32,12 +32,17 @@ module Style = {
 
 let component = ReasonReact.statelessComponent("RecommendationItem");
 
-let onPress = () => ();
-
-let make = (~place: Recommendation.place, _children) => {
+let make = (~place: Recommendation.place, ~openDetails, _children) => {
   ...component,
   render: _self =>
-    <TouchableOpacity style=Style.container onPress>
+    <TouchableOpacity
+      style=Style.container
+      onPress=(
+        () => {
+          openDetails("Sagrada");
+          ();
+        }
+      )>
       <Image source=place.image resizeMode=`cover style=Style.image />
       <View style=Style.content>
         <CustomText style=Style.title> place.title </CustomText>

@@ -24,7 +24,7 @@ type action =
 
 let component = ReasonReact.reducerComponent("RecommendationList");
 
-let make = _children => {
+let make = (~openDetails, _children) => {
   ...component,
   initialState: () => {filter: Category.All},
   reducer: (action, _state) =>
@@ -40,6 +40,7 @@ let make = _children => {
         (index, place) =>
           <RecommendationItem
             key=("recommendation-" ++ string_of_int(index))
+            openDetails
             place
           />,
         Recommendation.filteredRecommendations(currentFilter),

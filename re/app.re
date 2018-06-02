@@ -1,8 +1,6 @@
-open BsReactNative;
-
 type screen =
   | Recommendations
-  | RecommendationDetails(int);
+  | RecommendationDetails(string);
 
 module StatefullStackNavigator =
   StatefullStackNavigator.Make(
@@ -13,20 +11,22 @@ module StatefullStackNavigator =
   );
 
 type action =
-  | Increment
-  | Decrement;
+  | SetActiveRecommendation(string);
 
 type state = {
   navigationState: list(screen),
-  count: int,
+  activeRecommendation: string,
 };
 
 let component = ReasonReact.reducerComponent("App");
 
-let renderScreen = (~count, ~increment, ~decrement, push, screen) =>
+let renderScreen = (~setRecommendation, push, screen) =>
   switch (screen) {
-  | RecommendationDetails(a) => <RecommendationDetails />
-  | Recommendations => <RecommendationList />
+  | RecommendationDetails(_) => <RecommendationDetails />
+  | Recommendations =>
+    <RecommendationList
+      openDetails=(title => push(RecommendationDetails(title)))
+    />
   };
 
 let headerTitle = screen =>
@@ -37,11 +37,14 @@ let headerTitle = screen =>
 
 let make = _children => {
   ...component,
-  initialState: () => {navigationState: [Recommendations], count: 0},
+  initialState: () => {
+    navigationState: [Recommendations],
+    activeRecommendation: "",
+  },
   reducer: (action, state) =>
     switch (action) {
-    | Increment => ReasonReact.Update({...state, count: state.count + 1})
-    | Decrement => ReasonReact.Update({...state, count: state.count - 1})
+    | SetActiveRecommendation(title) =>
+      ReasonReact.Update({...state, activeRecommendation: title})
     },
   render: ({state, reduce}) =>
     ReasonReact.element @@
@@ -49,9 +52,8 @@ let make = _children => {
       ~getHeaderConfig=headerTitle,
       ~render=
         renderScreen(
-          ~count=state.count,
-          ~increment=reduce((_) => Increment),
-          ~decrement=reduce((_) => Decrement),
+          ~setRecommendation=
+            reduce((_) => SetActiveRecommendation("Sagrada")),
         ),
     ),
 };
