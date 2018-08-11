@@ -16,10 +16,12 @@ module Style = {
 
 let component = ReasonReact.statelessComponent("RecommendationDetails");
 
-let make = _children => {
+let make = (~placeID, _children) => {
   ...component,
-  render: _self =>
+  render: _self => {
+    let place = Recommendation.find(placeID);
     <ScrollView style=Style.container>
-      <Text value="test of a detailed view" />
-    </ScrollView>,
+      <Text value=place.title />
+    </ScrollView>;
+  },
 };

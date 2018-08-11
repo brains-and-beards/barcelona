@@ -20,12 +20,12 @@ type state = {
 
 let component = ReasonReact.reducerComponent("App");
 
-let renderScreen = (~setRecommendation, push, screen) =>
+let renderScreen = (push, screen) =>
   switch (screen) {
-  | RecommendationDetails(_) => <RecommendationDetails />
+  | RecommendationDetails(uuid) => <RecommendationDetails placeID=uuid />
   | Recommendations =>
     <RecommendationList
-      openDetails=(title => push(RecommendationDetails(title)))
+      openDetails=(uuid => push(RecommendationDetails(uuid)))
     />
   };
 
@@ -50,11 +50,7 @@ let make = _children => {
     ReasonReact.element @@
     StatefullStackNavigator.make(
       ~getHeaderConfig=headerTitle,
-      ~render=
-        renderScreen(
-          ~setRecommendation=
-            reduce((_) => SetActiveRecommendation("Sagrada")),
-        ),
+      ~render=renderScreen,
     ),
 };
 

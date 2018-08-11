@@ -39,7 +39,7 @@ let make = (~place: Recommendation.place, ~openDetails, _children) => {
       style=Style.container
       onPress=(
         () => {
-          openDetails("Sagrada");
+          openDetails(place.uuid);
           ();
         }
       )>
