@@ -1,17 +1,17 @@
-open ReactNative;
+open BsReactNative;
 
 module Style = {
-  open ReactNative.Style;
-  let container = style([flex(1.), backgroundColor(Colors.black), paddingTop(20.)]);
+  open BsReactNative.Style;
+  let container = style([flex(1.), backgroundColor(Colors.black)]);
   let content = style([flex(1.), backgroundColor(Colors.white)]);
   let categories =
     style([
-      height(60.),
+      height(Pt(60.)),
       backgroundColor(Colors.white),
-      paddingHorizontal(80.),
-      flexDirection(`row),
-      justifyContent(`spaceBetween),
-      alignItems(`center)
+      paddingHorizontal(Pt(80.)),
+      flexDirection(Row),
+      justifyContent(SpaceBetween),
+      alignItems(Center),
     ]);
 };
 
@@ -23,46 +23,48 @@ type action =
 
 let component = ReasonReact.reducerComponent("RecommendationList");
 
-let make = (~navigation, _children) => {
+let make = (~openDetails, _children) => {
   ...component,
   initialState: () => {filter: Category.All},
   reducer: (action, _state) =>
-    switch action {
-    | SetCategory(category) => ReasonReact.Update({filter: Category(category)})
+    switch (action) {
+    | SetCategory(category) =>
+      ReasonReact.Update({filter: Category(category)})
     | ClearCategories => ReasonReact.Update({filter: Category.All})
     },
-  render: (self) => {
+  render: self => {
     let currentFilter = self.state.filter;
     let recommendations =
       Array.mapi(
         (index, place) =>
-          <RecommendationItem navigation key=("recommendation-" ++ string_of_int(index)) place />,
-        Recommendation.filteredRecommendations(currentFilter)
+          <RecommendationItem
+            key=("recommendation-" ++ string_of_int(index))
+            openDetails
+            place
+          />,
+        Recommendation.filteredRecommendations(currentFilter),
       );
     <View style=Style.container>
-      <NavBar />
       <ScrollView style=Style.content>
         <View style=Style.categories>
-          <Category filter=All currentFilter onChange=(self.reduce((_event) => ClearCategories)) />
+          <Category
+            filter=All
+            currentFilter
+            onChange=(self.reduce(_event => ClearCategories))
+          />
           <Category
             filter=(Category(Eat))
             currentFilter
-            onChange=(self.reduce((_event) => SetCategory(Category.Eat)))
+            onChange=(self.reduce(_event => SetCategory(Category.Eat)))
           />
           <Category
             filter=(Category(See))
             currentFilter
-            onChange=(self.reduce((_event) => SetCategory(Category.See)))
+            onChange=(self.reduce(_event => SetCategory(Category.See)))
           />
         </View>
         (ReasonReact.arrayToElement(recommendations))
       </ScrollView>
-    </View>
-  }
+    </View>;
+  },
 };
-
-let jsComponent =
-  ReasonReact.wrapReasonForJs(
-    ~component,
-    (jsProps) => make(~navigation=jsProps##navigation, [||])
-  );

@@ -9,6 +9,9 @@
   "sources": [
     {
       "dir": "re"
+    },
+    {
+      "dir": "./external_deps/reason-react-native-navigation/"
     }
   ]
 }

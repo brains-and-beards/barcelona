@@ -1,4 +1,4 @@
-import React from 'react';
-import {app} from './lib/js/re/app.js';
+import React from "react";
+import { root } from "./lib/js/re/app.js";
 
-export default app;
+export default root;
