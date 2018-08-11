@@ -97,8 +97,8 @@ module HeaderTitle = {
             ]),
           "title":
             style([
-              fontSize @@ getPlatformStyle(Float(17.0), Float(20.0)),
-              fontWeight @@ getPlatformStyle(`_600, `_500),
+              fontSize @@ getPlatformStyle(Float(20.0), Float(23.0)),
+              fontFamily("Poppins"),
               color(String("rgba(0, 0, 0, .9)")),
               textAlign @@ getPlatformStyle(Center: Style.textAlign, Left),
               marginHorizontal(Pt(16.)),
@@ -230,8 +230,7 @@ let styles =
         "header0":
           style([
             paddingTop(Pt(statusBarHeight)),
-            backgroundColor @@
-            getPlatformStyle(String("#F7F7F7"), String("#FFF")),
+            backgroundColor(Colors.brainsYellow),
             height @@ Pt(statusBarHeight +. appBarHeight),
             ...platformContainerStyles,
           ]),
@@ -254,7 +253,8 @@ let renderHeader = (~goBack, ~position, index, title) =>
   </View>;
 
 module IOS = {
-  let renderHeader = (~goBack, ~position, index, title) =>
+  let renderHeader = (~goBack, ~position, index, title) => {
+    StatusBar.setBarStyle(`darkContent, ());
     <View
       key=(string_of_int(index) ++ title)
       style=(Style.concat([StyleSheet.absoluteFill, styles##header2]))>
@@ -267,6 +267,7 @@ module IOS = {
         }
       )
     </View>;
+  };
   let renderHeadersIOS = (~goBack, ~titles, ~position) =>
     ReasonReact.arrayToElement(
       Array.of_list @@ List.mapi(renderHeader(~goBack, ~position), titles),

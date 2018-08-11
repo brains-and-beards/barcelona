@@ -2,8 +2,7 @@ open BsReactNative;
 
 module Style = {
   open BsReactNative.Style;
-  let container =
-    style([flex(1.), backgroundColor(Colors.black), paddingTop(Pt(20.))]);
+  let container = style([flex(1.), backgroundColor(Colors.black)]);
   let content = style([flex(1.), backgroundColor(Colors.white)]);
   let categories =
     style([
@@ -46,7 +45,6 @@ let make = (~openDetails, _children) => {
         Recommendation.filteredRecommendations(currentFilter),
       );
     <View style=Style.container>
-      <NavBar />
       <ScrollView style=Style.content>
         <View style=Style.categories>
           <Category
