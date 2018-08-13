@@ -65,7 +65,7 @@ let recommendations = [|
     uuid: "3",
     title: "Sagrada Familia",
     tagline: "Top choice church",
-    description: "If you have time for only one sightseeing outing, this should be it. La Sagrada Família inspires awe by its sheer verticality, and in the manner of the medieval cathedrals it emulates, it�\128\153s still under construction. Work began in 1882 and is hoped (perhaps optimistically) to be completed in 2026, a century after the architect's death. Unfinished it may be, but it attracts around 2.8 million visitors a year and is the most visited monument in Spain.\n\n Some other sentence.\n\n Another test.",
+    description: {js|If you have time for only one sightseeing outing, this should be it. La Sagrada Família inspires awe by its sheer verticality, and in the manner of the medieval cathedrals it emulates, it's still under construction. Work began in 1882 and is hoped (perhaps optimistically) to be completed in 2026, a century after the architect's death. Unfinished it may be, but it attracts around 2.8 million visitors a year and is the most visited monument in Spain.\n\n Some other sentence.\n\n Another test.|js},
     image:
       BsReactNative.Image.(
         Required(

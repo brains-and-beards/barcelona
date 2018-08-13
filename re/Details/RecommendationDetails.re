@@ -68,12 +68,11 @@ let make = (~placeID, _children) => {
   ...component,
   render: _self => {
     let place = Recommendation.find(placeID);
-    let description = place.description;
     <ScrollView style=Style.container>
       <Text value=place.title style=Style.title />
       <Text value=(String.uppercase(place.tagline)) style=Style.tagline />
       <Image source=place.image resizeMode=`cover style=Style.image />
-      <Text value={j|$(description)|j} style=Style.description />
+      <Text value=place.description style=Style.description />
       <PracticalInfo info=place.practicalInfo />
       <Image
         source=BsReactNative.Image.(
