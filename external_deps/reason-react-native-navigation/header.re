@@ -12,7 +12,7 @@ let appBarHeight = getPlatformStyle(44., 56.);
 
 let statusBarHeight = getPlatformStyle(20., 0.);
 
-let titleOffset = getPlatformStyle(Style.Pt(70.), Style.Pt(56.));
+let titleOffset = getPlatformStyle(Style.Pt(30.), Style.Pt(56.));
 
 let iosPlatformStyle =
   Style.[

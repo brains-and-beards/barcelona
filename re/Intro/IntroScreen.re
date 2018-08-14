@@ -2,12 +2,12 @@ open BsReactNative;
 
 module Style = {
   open BsReactNative.Style;
-  let container =
+  let container = style([flex(1.), backgroundColor(Colors.brainsYellow)]);
+  let containerContent =
     style([
-      flex(1.),
-      backgroundColor(Colors.brainsYellow),
       alignItems(Center),
       justifyContent(Center),
+      paddingVertical(Pt(25.)),
     ]);
   let image =
     style([height(Pt(375.)), width(Pt(float_of_int(Theme.width)))]);
@@ -42,7 +42,8 @@ let welcomeText = {js|Welcome to Brains & Beards\nguide around sunny Barcelona. 
 let make = (~showRecommendation, _children) => {
   ...component,
   render: _self =>
-    <View style=Style.container>
+    <ScrollView
+      style=Style.container contentContainerStyle=Style.containerContent>
       <Image
         source=BsReactNative.Image.(
                  Required(
@@ -59,5 +60,5 @@ let make = (~showRecommendation, _children) => {
         onPress=showRecommendation style=Style.actionButtonContainer>
         <Text value="LET'S GO" style=Style.actionButtonText />
       </TouchableOpacity>
-    </View>,
+    </ScrollView>,
 };
