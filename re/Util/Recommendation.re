@@ -26,7 +26,7 @@ let recommendations = [|
       BsReactNative.Image.(
         Required(
           BsReactNative.Packager.require(
-            "../../../assets/images/montserrat.png",
+            "../../../../assets/images/montserrat.png",
           ),
         )
       ),
@@ -48,7 +48,7 @@ let recommendations = [|
       BsReactNative.Image.(
         Required(
           BsReactNative.Packager.require(
-            "../../../assets/images/santa-ceviche.jpg",
+            "../../../../assets/images/santa-ceviche.jpg",
           ),
         )
       ),
@@ -70,7 +70,7 @@ let recommendations = [|
       BsReactNative.Image.(
         Required(
           BsReactNative.Packager.require(
-            "../../../assets/images/sagrada-familia.jpg",
+            "../../../../assets/images/sagrada-familia.jpg",
           ),
         )
       ),
@@ -92,7 +92,7 @@ let recommendations = [|
       BsReactNative.Image.(
         Required(
           BsReactNative.Packager.require(
-            "../../../assets/images/boqueria.jpg",
+            "../../../../assets/images/boqueria.jpg",
           ),
         )
       ),
@@ -114,7 +114,7 @@ let recommendations = [|
       BsReactNative.Image.(
         Required(
           BsReactNative.Packager.require(
-            "../../../assets/images/quimet-quimet.jpg",
+            "../../../../assets/images/quimet-quimet.jpg",
           ),
         )
       ),
@@ -136,7 +136,7 @@ let recommendations = [|
       BsReactNative.Image.(
         Required(
           BsReactNative.Packager.require(
-            "../../../assets/images/bar-la-plata.jpg",
+            "../../../../assets/images/bar-la-plata.jpg",
           ),
         )
       ),
