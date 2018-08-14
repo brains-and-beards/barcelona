@@ -31,8 +31,10 @@ let renderScreen = (push, screen) =>
 
 let headerTitle = screen =>
   switch (screen) {
-  | Recommendations => "Recommendation"
-  | RecommendationDetails(_) => "Details"
+  | Recommendations => "B&B Recommends"
+  | RecommendationDetails(uuid) =>
+    let place = Recommendation.find(uuid);
+    place.title;
   };
 
 let make = _children => {
