@@ -1,4 +1,5 @@
 type screen =
+  | Intro
   | Recommendations
   | RecommendationDetails(string);
 
@@ -6,7 +7,7 @@ module StatefullStackNavigator =
   StatefullStackNavigator.Make(
     {
       type navigationState = screen;
-      let initialScreen = Recommendations;
+      let initialScreen = Intro;
     },
   );
 
@@ -22,6 +23,7 @@ let component = ReasonReact.reducerComponent("App");
 
 let renderScreen = (push, screen) =>
   switch (screen) {
+  | Intro => <IntroScreen />
   | RecommendationDetails(uuid) => <RecommendationDetails placeID=uuid />
   | Recommendations =>
     <RecommendationList
@@ -31,6 +33,7 @@ let renderScreen = (push, screen) =>
 
 let headerTitle = screen =>
   switch (screen) {
+  | Intro => ""
   | Recommendations => "B&B Recommends"
   | RecommendationDetails(uuid) =>
     let place = Recommendation.find(uuid);
