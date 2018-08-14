@@ -23,7 +23,7 @@ let component = ReasonReact.reducerComponent("App");
 
 let renderScreen = (push, screen) =>
   switch (screen) {
-  | Intro => <IntroScreen />
+  | Intro => <IntroScreen showRecommendation=(() => push(Recommendations)) />
   | RecommendationDetails(uuid) => <RecommendationDetails placeID=uuid />
   | Recommendations =>
     <RecommendationList

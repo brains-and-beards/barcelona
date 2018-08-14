@@ -39,7 +39,7 @@ let component = ReasonReact.statelessComponent("IntroScreen");
 
 let welcomeText = {js|Welcome to Brains & Beards\nguide around sunny Barcelona. \n Check out some cool places\nwe recommend!|js};
 
-let make = _children => {
+let make = (~showRecommendation, _children) => {
   ...component,
   render: _self =>
     <View style=Style.container>
@@ -55,8 +55,9 @@ let make = _children => {
         style=Style.image
       />
       <Text value=welcomeText style=Style.description />
-      <View style=Style.actionButtonContainer>
+      <TouchableOpacity
+        onPress=showRecommendation style=Style.actionButtonContainer>
         <Text value="LET'S GO" style=Style.actionButtonText />
-      </View>
+      </TouchableOpacity>
     </View>,
 };
