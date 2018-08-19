@@ -3,7 +3,7 @@ open BsReactNative;
 type category =
   | Eat
   | See
-  | Stay;
+  | Do;
 
 type filter =
   | Category(category)
@@ -35,7 +35,7 @@ let make = (~filter: filter, ~currentFilter, ~onChange, _children) => {
       | All => "all"
       | Category(See) => "see"
       | Category(Eat) => "eat"
-      | Category(Stay) => "stay"
+      | Category(Do) => "do"
       };
     let style =
       active ?

@@ -62,6 +62,11 @@ let make = (~openDetails, _children) => {
             currentFilter
             onChange=(self.reduce(_event => SetCategory(Category.See)))
           />
+          <Category
+            filter=(Category(Do))
+            currentFilter
+            onChange=(self.reduce(_event => SetCategory(Category.Do)))
+          />
         </View>
         (ReasonReact.arrayToElement(recommendations))
       </ScrollView>
