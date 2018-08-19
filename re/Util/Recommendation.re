@@ -6,8 +6,8 @@ type practicalInfo = {
 
 type place = {
   title: string,
-  rating: int,
   tagline: string,
+  teaser: string,
   description: string,
   image: BsReactNative.Image.imageSource,
   category: Category.category,

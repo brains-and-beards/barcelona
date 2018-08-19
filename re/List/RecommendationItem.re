@@ -45,7 +45,7 @@ let make = (~place: Recommendation.place, ~openDetails, _children) => {
       <Image source=place.image resizeMode=`cover style=Style.image />
       <View style=Style.content>
         <CustomText style=Style.title> place.title </CustomText>
-        <CustomText style=Style.description> place.description </CustomText>
+        <CustomText style=Style.description> place.teaser </CustomText>
       </View>
     </TouchableOpacity>,
 };
