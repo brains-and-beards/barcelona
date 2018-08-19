@@ -12,7 +12,6 @@ module Style = {
   let container =
     style([
       backgroundColor(Colors.white),
-      height(Pt(325.)),
       shadowOpacity(0.3),
       shadowRadius(3.),
       shadowOffset(~height=3., ~width=0.),
@@ -27,7 +26,7 @@ module Style = {
       fontSize(Float(26.)),
       fontWeight(`_600),
     ]);
-  let description = style([height(Pt(65.)), fontSize(Float(14.))]);
+  let description = style([fontSize(Float(14.))]);
 };
 
 let component = ReasonReact.statelessComponent("RecommendationItem");
