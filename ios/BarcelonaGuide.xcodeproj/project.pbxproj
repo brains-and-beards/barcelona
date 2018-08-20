@@ -1285,12 +1285,14 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = UGZ4Z5MSQ4;
 				INFOPLIST_FILE = BarcelonaGuide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brainsandbeards.barcelona-guide";
 				PRODUCT_NAME = BarcelonaGuide;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1303,12 +1305,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UGZ4Z5MSQ4;
 				INFOPLIST_FILE = BarcelonaGuide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brainsandbeards.barcelona-guide";
 				PRODUCT_NAME = BarcelonaGuide;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
